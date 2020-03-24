@@ -13,17 +13,24 @@ def main():
     
     valor_final = valor_parcial - desconto
     
-    print(f'\n>>>>>> CUPOM FISCAL <<<<<<\n{carne} ---- {quantos_kg}kg\nDesconto ----- - R${desconto:.2f}')
-    print(f'Total: R$ {valor_final:.2f}\n\n-=-=-=-=-=-=-=-=-=-=-=-=-=\nb') 
+    if forma_pagamento == 's':
+        forma_pagamento = 'Sim'
+    else:
+        forma_pagamento = 'Não'
+        
+    print(f'\n>>>>>> CUPOM FISCAL <<<<<<\n{carne} ---- {quantos_kg} kg')
+    print(f'É no cartão? {forma_pagamento}')
+    print(f'Desconto ----- - R$ {desconto:.2f}')
+    print(f'Total: R$ {valor_final:.2f}\n\n-=-=-=-=-=-=-=-=-=-=-=-=-=\n') 
 
 
 def verificar_carne(qual_carne):
     if qual_carne == 'f':
-        return 'filé'
+        return 'Filé'
     elif qual_carne == 'a':
-        return 'alcatra'
+        return 'Alcatra'
     elif qual_carne == 'p':
-        return 'picanha'
+        return 'Picanha'
 
 
 def calc_valor_parcial(qual_carne, quantos_kg):
