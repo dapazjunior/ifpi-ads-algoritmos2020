@@ -17,6 +17,15 @@ def main():
     print(f'Total: R$ {valor_final:.2f}\n\n-=-=-=-=-=-=-=-=-=-=-=-=-=\nb') 
 
 
+def verificar_carne(qual_carne):
+    if qual_carne == 'f':
+        return 'filé'
+    elif qual_carne == 'a':
+        return 'alcatra'
+    elif qual_carne == 'p':
+        return 'picanha'
+
+
 def calc_valor_parcial(qual_carne, quantos_kg):
     if qual_carne == 'f':
         valor_file = calcular_file(quantos_kg)
@@ -29,15 +38,6 @@ def calc_valor_parcial(qual_carne, quantos_kg):
         return valor_picanha
 
     
-def verificar_carne(qual_carne):
-    if qual_carne == 'f':
-        return 'filé'
-    elif qual_carne == 'a':
-        return 'alcatra'
-    elif qual_carne == 'p':
-        return 'picanha'
-
-
 def calcular_file(quantos_kg):
     if quantos_kg <= 5:
         preco = quantos_kg * 4.9
