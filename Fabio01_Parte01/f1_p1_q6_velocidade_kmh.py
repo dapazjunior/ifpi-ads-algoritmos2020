@@ -1,8 +1,14 @@
-# Entrada
-velocidade_kmh = float(input('Digite um valor em km/h: '))
+def main():
+    velocidade_kmh = float(input('Digite um valor em km/h: '))
 
-# Processamento
-velocidade_ms = velocidade_kmh / 3.6
+    velocidade_ms = calc_vel_ms(velocidade_kmh)
 
-# Saida
-print(f'O resultado é {velocidade_ms:.2f} m/s')
+    print(f'O resultado é {velocidade_ms:.1f} m/s')
+
+
+def calc_vel_ms(velocidade_kmh):
+    velocidade_ms = velocidade_kmh / 3.6
+    return velocidade_ms
+
+
+main()
