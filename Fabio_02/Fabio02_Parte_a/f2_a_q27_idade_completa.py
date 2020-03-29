@@ -98,7 +98,7 @@ def calcular_meses(dia, mes, dia_hoje, mes_hoje):
             meses = mes_hoje - mes
             return meses
         elif dia_hoje < dia:
-            meses = 0
+            meses = mes_hoje - mes - 1
             return meses
     
     elif (mes_hoje < mes):
