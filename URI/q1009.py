@@ -1,6 +1,12 @@
-nome = input()
-salario = float(input())
-vendas = float(input())
-salario = salario + 0.15 * vendas
+def main():
+    nome = input()
+    salario = float(input())
+    vendas = float(input())
 
-print('TOTAL = R$ {:.2f}'.format(salario))
+    salario = salario + 0.15 * vendas
+
+    print('TOTAL = R$ {:.2f}'.format(salario))
+
+
+    main()
+    
