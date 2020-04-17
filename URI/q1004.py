@@ -1,4 +1,10 @@
-a = int(input())
-b = int(input())
-prod = a * b
-print('PROD = {}'.format(prod))
+def main():
+    a = int(input())
+    b = int(input())
+    
+    prod = a * b
+    
+    print('PROD = {}'.format(prod))
+
+
+main()
