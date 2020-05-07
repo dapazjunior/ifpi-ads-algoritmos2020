@@ -3,7 +3,7 @@ def main():
     fatorial = num
     produto = num
     
-    while num > 1:
+    for _ in range(1, num):
         produto = produto * (num - 1)
         num = num - 1
     

@@ -2,7 +2,7 @@ def main():
     n = int(input('Quantos números vai digitar? '))
     soma = 0
     
-    for _ in range(1, n + 1):
+    for _ in range(n):
         num = int(input('Digite um número: '))
         soma += num
     
