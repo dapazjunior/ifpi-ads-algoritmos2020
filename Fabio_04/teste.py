@@ -1,51 +1,21 @@
 def main():
-    nome,altura,peso = ficha()
+    numero_1 = int(input('Numero 1: '))
+    numero_2 = int(input('Numero 2: '))
     
-    nome_alt,alt,nome_baix,baix,nome_magr,magr,nome_gord,gord = concurso(altura,peso,nome)
-    
-    print('A modelo mais alta é: %s'%nome_alt,'. Altura: %.1f'%alt)
-    print('A modelo mais baixa é: %s'%nome_baix,'. Altura: %.1f'%baix)
-    print('A modelo mais magra é: %s'%nome_magr,'. Peso: %.1f'%magr)
-    print('A modelo mais gorda é: %s'%nome_gord,'. Peso: %.1f'%gord)
+    multiplicacao = valor_multiplicacao(numero_1,numero_2)
+
+    print('Valor da multiplicacao eh: %d'%multiplicacao)
 
 
-def ficha():
-    nome = input('Digite o nome: ')
+def valor_multiplicacao(n1,n2):
+    multiplicacao = n1
+    contador = 1
     
-    if nome != 'FIM':
-        altura = float(input('Digite a altura: '))
-        peso = float(input('Digite o peso: '))
-    else:
-        altura = 0
-        peso = 0
-        
-    return nome,altura,peso,
+    while contador < n2:
+        multiplicacao = multiplicacao + n1
+        contador += 1
 
-
-def concurso(altura,peso,nome):
-    baixa = altura
-    alta = altura
-    magra = peso
-    gorda = peso
-    
-    while nome != 'FIM':
-        if peso <= magra:
-            magra = peso
-            nome_magra = nome
-        elif peso >= gorda:
-            gorda = peso
-            nome_gorda = nome
-        
-        if altura <= baixa:
-            baixa = altura
-            nome_baixa = nome
-        elif altura >= alta:
-            alta = altura
-            nome_alta = nome
-        nome,altura,peso = ficha()
-    
-    return nome_alta,alta,nome_baixa,baixa,nome_magra,magra,nome_gorda,gorda
-
+    return multiplicacao
 
 if __name__ == '__main__':
     main()
