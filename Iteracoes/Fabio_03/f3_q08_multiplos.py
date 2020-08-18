@@ -9,6 +9,7 @@ def main():
     while possivel_mult >= lim_inf:
         if (possivel_mult % n) == 0:
             cont_multiplos = cont_multiplos + 1
+            print(possivel_mult)
         
         possivel_mult -= 1
     
