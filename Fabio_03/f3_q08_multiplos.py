@@ -7,6 +7,7 @@ def main():
     for i in range(lim_inf, lim_sup + 1):
         if (i % n) == 0:
             cont_multiplos = cont_multiplos + 1
+            print (i)
     
     print(f'O número {n} tem {cont_multiplos} múltiplos entre {lim_inf} e {lim_sup}')
 
