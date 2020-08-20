@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt:BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primo</title>
+</head>
+<body>
+    
+    <h1>Fábio 03 - Q11 - Primos no Intervalo</h1>
+
+    <form action="#">
+        <input id="inferior" type="number" placeholder="Limite Inferior">
+        <input id="superior" type="number" placeholder="Limite Superior">
+        <input id="botao" type="submit" value="Mostrar Primos">
+    </form>
+
+    <h3>Resultado: </h3>
+    <ul id="primos">
+    </ul>
+
+    <script>
+        let cx_inferior = document.getElementById('inferior')
+        let cx_superior = document.getElementById('superior')
+        let botao = document.getElementById('botao')
+        let lista = document.getElementById('primos')
+
+        function adicionar_primo(valor){
+            let item = document.createElement('li')
+            item.textContent = valor
+            lista.appendChild(item)
+        }
+
+        function eh_primo(n){
+            qtd_divisores = 0
+            numero = 1
+            while (numero <= n){
+                if (n % numero == 0){
+                    qtd_divisores += 1
+                }
+                numero += 1
+            }
+
+            if (qtd_divisores == 2){
+                return true
+            }else{
+                return false
+            }
+        }
+
+        function clicou(){
+            let inferior = Number(cx_inferior.value)
+            let superior = Number(cx_superior.value)
+
+            while (inferior <= superior){
+                if (eh_primo(inferior)){
+                    adicionar_primo(inferior)
+                }
+                
+                inferior++ // inferior += 1
+            }
+
+        }
+
+        botao.addEventListener('click', clicou)
+    </script>
+</body>
+</html>
