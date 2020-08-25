@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt:BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras</title>
+    <style>
+        #content{
+            background-color: rgba(245, 245, 245, 0.644);
+            width: 70%;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .figura{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            background-color: rgb(224, 123, 64);
+            transition: all 0.5s ease-in;
+        }
+
+        .figura:hover{
+            border-radius: 50%;
+            background-color: violet;
+            transform: rotate(180deg);
+        }
+
+        #formulario{
+            text-align: center;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <form id="formulario">
+            <input id="qtd" type="number" placeholder="quantidade?">
+            <input id="btn" type="submit" value="add">
+        </form>
+        
+    </div>
+    
+    <script>
+        let campo_qtd = document.getElementById('qtd')
+        let botao = document.getElementById('btn')
+        let content = document.getElementById('content')
+
+        function addFigura(e){
+            let qtd = Number(campo_qtd.value)
+
+            e.preventDefault()
+           
+            //let i = 0
+            //while (i < qtd){
+
+            for(let i = 0; i < qtd; i++) {    
+                let figura = document.createElement('div')
+                figura.classList.add('figura')
+                content.appendChild(figura)
+
+                // i += 1
+            }
+        }
+
+        botao.addEventListener('click', addFigura)
+    </script>
+</body>
+</html>

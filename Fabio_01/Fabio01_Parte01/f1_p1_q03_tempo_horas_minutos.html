@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt:BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo em horas e minutos</title>
+</head>
+<body>
+    
+    <h1>Fábio 01 - Q03 - Converter tempo em horas e minutos</h1>
+
+    <form action="#">
+        <input id="tempoMinutos" type="number" placeholder="Minutos">
+        <input id="botao" type="submit" value="Converter">
+    </form>
+
+    <h3>Resultado: </h3>
+    <div id='totalTempo'></div>
+
+    <script>
+        
+        let caixaTempoMinutos = document.getElementById('tempoMinutos')
+        let botao = document.getElementById('botao')
+        let calculoHorasMinutos = document.getElementById('totalTempo')      
+        
+        function clicou(){
+            let tempoMinutos = Number(caixaTempoMinutos.value)
+            tempoHoras = Math.trunc(tempoMinutos / 60)
+            minutosRestantes = tempoMinutos % 60
+
+            let resultado = document.createElement('div')
+            resultado.textContent = tempoHoras + ' horas e ' + minutosRestantes + ' minutos'
+            calculoHorasMinutos.appendChild(resultado)
+            }
+
+        botao.addEventListener('click', clicou)
+    </script>
+</body>
+</html>

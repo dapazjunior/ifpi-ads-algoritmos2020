@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt:BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primo</title>
+</head>
+<body>
+    
+    <h1>Fábio 01 - Q01 - Converter Velocidade</h1>
+
+    <form action="#">
+        <input id="velocidadeMs" type="number" placeholder="Velocidade em m/s">
+        <input id="botao" type="submit" value="Converter">
+    </form>
+
+    <h3>Resultado: </h3>
+    <div id='velocidadeKph'></div>
+
+    <script>
+        
+        let caixaVelocidadeMs = document.getElementById('velocidadeMs')
+        let botao = document.getElementById('botao')
+        let resultadoVelocidadeKph = document.getElementById('velocidadeKph')      
+        
+        function clicou(){
+            let velocidadeMs = Number(caixaVelocidadeMs.value)
+            velocidadeKph = velocidadeMs * 3.6
+
+            let resultado = document.createElement('div')
+            resultado.textContent = velocidadeKph + ' km/h'
+            resultadoVelocidadeKph.appendChild(resultado)
+            }
+
+        botao.addEventListener('click', clicou)
+    </script>
+</body>
+</html>

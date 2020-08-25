@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt:BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primo</title>
+</head>
+<body>
+    
+    <h1>Fábio 01 - Q04 - Converter Dólar em Real</h1>
+
+    <form action="#">
+        <input id="dolar1" type="number" placeholder="1º valor em U$">
+        <input id="dolar2" type="number" placeholder="2º valor em U$">
+        <input id="botao" type="submit" value="Converter">
+    </form>
+
+    <h3>Resultado: </h3>
+    <div id='valorEmReal'></div>
+
+    <script>
+        
+        let caixaDolar1 = document.getElementById('dolar1')
+        let caixaDolar2 = document.getElementById('dolar2')
+        let botao = document.getElementById('botao')
+        let resultadoValorEmReal = document.getElementById('valorEmReal')      
+        
+        function clicou(){
+            let valorDolar1 = Number(caixaDolar1.value)
+            let valorDolar2 = Number(caixaDolar2.value)
+            valorEmReal = (valorDolar1 + valorDolar2) * 5.61
+
+            let resultado = document.createElement('div')
+            resultado.textContent = `R$ ${valorEmReal.toFixed(2)}`
+            resultadoValorEmReal.appendChild(resultado)
+            }
+
+        botao.addEventListener('click', clicou)
+    </script>
+</body>
+</html>
