@@ -1,15 +1,12 @@
 def main():
-    soma = 0
-    denominador = 1
-    lista = []
+    n = int(input('Digite um número: '))
 
-    for i in range(1, 100, 2):
-        termo = i / denominador
-        denominador += 1
+    soma = 0
+
+    for i in range(1, n + 1):
+        termo = (2*i - 1)/ i
         soma += termo
-        lista.append(termo)
     
-    print(lista)
     print(soma)
 
 
