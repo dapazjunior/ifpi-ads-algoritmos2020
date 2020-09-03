@@ -8,13 +8,15 @@ def rotate_word():
     texto_convertido = ''
 
     for letra in texto:
+        pos = alfabeto.find(letra)
+        
         if letra in alfabeto:
-            pos = alfabeto.find(letra)
             pos = pos + mudar_posicao
-
             texto_convertido = texto_convertido + alfabeto[pos]
+        
+        else:
+            texto_convertido = texto_convertido + letra        
+        
 
     print ('Texto rotacionado: ' + texto_convertido)
 
-
-rotate_word()
