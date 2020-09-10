@@ -2,7 +2,7 @@ def main():
     num = int(input('Quantas linhas criptografadas?\n>>> '))
     
     for i in range(num):
-        strg_criptografar = input(f'\nLinha {i + 1}: 2')
+        strg_criptografar = input(f'\nLinha {i + 1}: ')
         
         nova_string = criptografar(strg_criptografar)
         print(f'Linha {i + 1} encriptada:' + nova_string)
