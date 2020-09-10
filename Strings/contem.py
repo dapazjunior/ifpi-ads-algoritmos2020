@@ -6,15 +6,15 @@ def main():
         print('Sim. Palavra encontrada na frase!')
     
     else:
-        print('Não. A frase não contem a palavra!')
+        print('Não. A frase não contém a palavra!')
 
 
 def contem(word, frase):
     indice_frase = 0
     limite = len(frase) - len(word) + 1
         
-    while indice_frase < len(frase):
-        if (frase[indice_frase] == word[0]) and (indice_frase < limite):
+    while indice_frase < limite:
+        if (frase[indice_frase] == word[0]):
             if verificar_substring(word, frase, indice_frase) == True:
                 return True
                 
