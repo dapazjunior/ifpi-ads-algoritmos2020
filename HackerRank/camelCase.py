@@ -23,4 +23,4 @@ def is_upper(char):
         return False
 
 
-main()    
+main()
