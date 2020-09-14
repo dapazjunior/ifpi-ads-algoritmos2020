@@ -18,7 +18,7 @@ def all_substrings(string):
         while index_float < len(string):
             substring = string[index_fixed:index_float + 1]
             if substring != '':
-                substrings.append(sorted(substring))
+                substrings.append(order_letters(substring))
             
             index_float += 1
         
@@ -45,6 +45,21 @@ def is_there_anagramas(string):
         index_sub_fixed += 1
     
     return num_anagramas // 2
+
+
+def order_letters(string):
+    index = 97
+    letters = ''
+    
+    while index <= 122:
+        letter = chr(index)
+        for c in string:
+            if letter == c:
+                letters += c
+        
+        index += 1
+    
+    return letters
 
 
 def compare_substrings(str1, str2):
