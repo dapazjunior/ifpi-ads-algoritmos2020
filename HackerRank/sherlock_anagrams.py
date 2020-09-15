@@ -36,7 +36,8 @@ def is_there_anagramas(string):
         index_sub_float = 0
         
         while index_sub_float < len(substrings):
-            if index_sub_float != index_sub_fixed:
+            if index_sub_float != index_sub_fixed and \
+                len(substrings[index_sub_fixed]) == len(substrings[index_sub_float]):
                 if compare_substrings(substrings[index_sub_fixed], substrings[index_sub_float]):
                     num_anagramas += 1
                 
