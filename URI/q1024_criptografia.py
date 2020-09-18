@@ -1,7 +1,7 @@
 def main():
     num = int(input())
     
-    for i in range(num):
+    for _ in range(num):
         strg_criptografar = input()
         
         nova_string = criptografar(strg_criptografar)
