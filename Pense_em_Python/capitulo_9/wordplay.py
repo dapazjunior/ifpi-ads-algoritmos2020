@@ -4,7 +4,7 @@ def main():
     menu = '> > > > WordPplay < < < <\n' \
         + '1 - Palavras com mais de 20 letras\n' \
         + '2 - Palavras sem "e"\n' \
-        + '3 - \n' \
+        + '3 - Evitar letras proibidas\n' \
         + '0 - Sair\n' \
         + '\nDigite uma opção: '
 
@@ -54,15 +54,33 @@ def palavras_sem_e(palavras):
 
 
 def tem_letra_e(palavra):
+    verificacao = False
+    
     for letra in palavra:
         if letra == 'e':
-            return True
-        else:
-            return False
+            verificacao = True
+    
+    return verificacao
 
 
 def evitar_letras_proibidas(palavras):
-    pass
+    print('> LETRAS PROIBIDAS\n')
+    
+    letras = input('Digite as letras que não serão utilizadas: ')
+    for palavra in palavras:
+        if nao_tem_letras(palavra, letras):
+            print(palavra)
+
+
+def nao_tem_letras(palavra, letras):
+    verificacao = True
+    
+    for c in palavra:
+        for i in letras:
+            if c == i:
+                verificacao = False
+    
+    return verificacao                
 
 
 def ler_palavras():
