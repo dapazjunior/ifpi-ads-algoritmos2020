@@ -1,27 +1,21 @@
-while True:
-    try:
-        n, l, c = [int(x) for x in input().split()]
-        w = input()
-        page = 1
-        line = 0
-        ch = 0
-        tam = len(w)
-        i = 0
 
-        while i < tam:
-            while w[i] == ' ' and (ch == 0 or ch == c):
-                i += 1
-            # print(w[i], ' --- ', i, page, line, ch)
-            if ch == c:
-                line += 1
-                ch = 0
-            if line == l:
-                page += 1
-                line = 0
-            i += 1
-            ch += 1
+#Exercise 9.3
+fin = open('words.txt')
 
-        print(page)
+def avoids(word,letter):
+    for char in word:
+        if char in letter:
+            return False
+    return True
 
-    except EOFError:
-        break
+letter = raw_input('What letters to exclude? ')
+count = 0
+for line in fin:
+    word = line.strip()
+    if avoids(word, letter):
+        count += 1
+        print(word)
+
+percent = (count / 113809.0) * 100
+
+print (str(percent)) + "% of the words don't have " + letter + '.'
