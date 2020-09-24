@@ -5,9 +5,9 @@ def main():
     vetor = inserir_dados(qtd)
     calcular_quantidades(vetor)
     
-    vetor = substituir_dados(vetor)
-    calcular_quantidades(vetor)
-    media = calcular_media(vetor)
+    vetor_modificado = substituir_dados(vetor)
+    calcular_quantidades(vetor_modificado)
+    media = calcular_media(vetor_modificado)
     
     print(f'> Média após transformação: {media:.2f}')
     
