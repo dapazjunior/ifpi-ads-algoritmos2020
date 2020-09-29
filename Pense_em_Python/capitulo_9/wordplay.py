@@ -1,7 +1,7 @@
 def main():
     palavras = ler_palavras()
     
-    menu = '> > > > WordPplay < < < <\n' \
+    menu = '> > > > WordPlay < < < <\n' \
         + '1 - Palavras com mais de 20 letras\n' \
         + '2 - Palavras sem "e"\n' \
         + '3 - Evitar letras proibidas\n' \
