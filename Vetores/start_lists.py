@@ -1,17 +1,16 @@
 def main():
     lista = []
-    
     menu_principal(lista)
     
 
 def menu_principal(lista):
     menu = '> > > ListsPlay < < <\n'
-    menu += '1 - INSERIR VALORES\n'
-    menu += '2 - MOSTRAR VALORES\n'
-    menu += '3 - REMOVER VALORES\n'
-    menu += '4 - CONTADORES\n'
-    menu += '5 - MÉDIA DOS VALORES\n'
-    menu += '6 - OPERAÇÕES COM OS VALORES\n'
+    menu += '1 - Inserir Valores\n'
+    menu += '2 - Mostrar Valores\n'
+    menu += '3 - Remover Valores\n'
+    menu += '4 - Contadores\n'
+    menu += '5 - Média dos Valores\n'
+    menu += '6 - Operações com os Valores\n'
     menu += '0 - SAIR\n'
     menu += '\nOpção >>> '
     
@@ -27,6 +26,8 @@ def menu_principal(lista):
         contar(lista)
     elif opcao == 5:
         media(lista)
+    elif opcao == 6:
+        operacoes(lista)
     elif opcao == 0:
         print('Fim do programa!')
     else:
@@ -66,7 +67,7 @@ def inserir_inicio(lista):
     lista_add = []
     
     for i in range(qtd):
-        valor = input(f'Elemento "{i}": ')
+        valor = int(input(f'Elemento "{i}": '))
         lista_add.append(valor)
     
     lista = lista_add + lista
@@ -78,7 +79,7 @@ def inserir_final(lista):
     pos = len(lista)
     
     for i in range(qtd):
-        valor = input(f'Elemento "{pos + i}": ')
+        valor = int(input(f'Elemento "{pos + i}": '))
         lista.append(valor)
     
     return lista
@@ -330,13 +331,176 @@ def media(lista):
     menu_principal(lista)
 
 
+def operacoes(lista):
+    menu_op = '\n> > > OPERAÇÕES < < <\n'
+    menu_op += '1 - Multiplicar Positivos\n'
+    menu_op += '2 - Dividir Positivos\n'
+    menu_op += '3 - Multiplicar Negativos\n'
+    menu_op += '4 - Dividir Negativos \n'
+    menu_op += '5 - Multiplicar Pares\n'
+    menu_op += '6 - Multiplicar ímpares\n'
+    menu_op += '7 - Multiplicar Todos\n'
+    menu_op += '8 - Dividir Pares\n'
+    menu_op += '9 - Dividir Ímpares\n'
+    menu_op += '10 - Dividir Todos\n'
+    menu_op += '\nOpção>>> '
+    
+    opcao_op = int(input(menu_op))
+    
+    if opcao_op == 1:
+        lista = multiplicar_positivos(lista)
+    if opcao_op == 2:
+        lista = dividir_positivos(lista)
+    if opcao_op == 3:
+        lista = multiplicar_negativos(lista)
+    if opcao_op == 4:
+        lista = dividir_negativos(lista)
+    if opcao_op == 5:
+        lista = multiplicar_pares(lista)
+    if opcao_op == 6:
+        lista = multiplicar_impares(lista)
+    if opcao_op == 7:
+        lista = multiplicar_todos(lista)
+    if opcao_op == 8:
+        lista = dividir_pares(lista)
+    if opcao_op == 9:
+        lista = dividir_impares(lista)
+    if opcao_op == 10:
+        lista = dividir_todos(lista)
+    else:
+        print('\nOpção Inválida!')
+        
+    if continuar():
+        operacoes(lista)
+    else:
+        input('Aperte ENTER para continuar... \n')
+        menu_principal(lista)
+
+
+def multiplicar_positivos(lista):
+    nova_lista = []
+    operador = int(input('Qual o fator da multiplicação?\n> '))
+    
+    for num in lista:
+        if eh_positivo(num):
+            nova_lista.append(num * operador)
+        else:
+            nova_lista.append(num)
+    
+    return nova_lista
+
+
+def dividir_positivos(lista):
+    nova_lista = []
+    operador = int(input('Dividir por quanto?\n> '))
+    
+    for num in lista:
+        if eh_positivo(num):
+            nova_lista.append(num / operador)
+        else:
+            nova_lista.append(num)
+    
+    return nova_lista
+
+
+def multiplicar_negativos(lista):
+    nova_lista = []
+    operador = int(input('Qual o fator da multiplicação?\n> '))
+    
+    for num in lista:
+        if eh_positivo(num):
+            nova_lista.append(num)
+        else:
+            nova_lista.append(num * operador)
+    
+    return nova_lista
+
+
+def dividir_negativos(lista):
+    nova_lista = []
+    operador = int(input('Dividir por quanto?\n> '))
+    
+    for num in lista:
+        if eh_positivo(num):
+            nova_lista.append(num)
+        else:
+            nova_lista.append(num / operador)
+    
+    return nova_lista
+
+
+def multiplicar_pares(lista):
+    nova_lista = []
+    operador = int(input('Qual o fator da multiplicação?\n> '))
+    
+    for num in lista:
+        if eh_par(num):
+            nova_lista.append(num * operador)
+        else:
+            nova_lista.append(num)
+    
+    return nova_lista
+
+
+def multiplicar_impares(lista):
+    nova_lista = []
+    operador = int(input('Qual o fator da multiplicação?\n> '))
+    
+    for num in lista:
+        if eh_par(num):
+            nova_lista.append(num)
+        else:
+            nova_lista.append(num * operador)
+    
+    return nova_lista
+
+
+def multiplicar_todos(lista):
+    operador = int(input('Qual o fator da multiplicação?\n> '))
+    lista * operador
+    
+    return lista
+
+
+def dividir_pares(lista):
+    nova_lista = []
+    operador = int(input('Qual o fator da divisão?\n> '))
+    
+    for num in lista:
+        if eh_par(num):
+            nova_lista.append(num / operador)
+        else:
+            nova_lista.append(num)
+    
+    return nova_lista
+
+
+def dividir_impares(lista):
+    nova_lista = []
+    operador = int(input('Qual o fator da divisão?\n> '))
+    
+    for num in lista:
+        if eh_par(num):
+            nova_lista.append(num)
+        else:
+            nova_lista.append(num / operador)
+    
+    return nova_lista
+
+
+def dividir_todos(lista):
+    operador = int(input('Qual o fator da divisão?\n> '))
+    lista / operador
+    
+    return lista
+
+
 def continuar():
     continuar = 'Deseja continuar?\n' \
             + 'S - Continuar(Inserir)\n' \
             + 'N - Voltar ao menu principal\n> '
         
     verificar_continuar = input(continuar).upper()
-    print(verificar_continuar)
     
     if verificar_continuar == 'S':
         return True
