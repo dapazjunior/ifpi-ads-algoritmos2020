@@ -47,11 +47,11 @@ def inserir(lista):
     opcao_inserir = int(input(menu_inserir))
     
     if opcao_inserir == 1:
-        lista = inserir_inicio(lista)
+        inserir_inicio(lista)
     elif opcao_inserir == 2:
-        lista = inserir_final(lista)
+        inserir_final(lista)
     elif opcao_inserir == 3:
-        lista = inserir_posicao(lista)
+        inserir_posicao(lista)
     else:
         print('\nOpção Inválida!')
         
@@ -71,7 +71,6 @@ def inserir_inicio(lista):
         lista_add.append(valor)
     
     lista = lista_add + lista
-    return lista
 
 
 def inserir_final(lista):
@@ -81,8 +80,6 @@ def inserir_final(lista):
     for i in range(qtd):
         valor = int(input(f'Elemento "{pos + i}": '))
         lista.append(valor)
-    
-    return lista
 
 
 def inserir_posicao(lista):
@@ -92,8 +89,6 @@ def inserir_posicao(lista):
         pos = int(input('\nPosição a ser inserido: '))
         valor = int(input(f'Elemento "{pos}": '))
         lista.insert(pos, valor)
-    
-    return lista
 
 
 def mostrar(lista):
@@ -138,11 +133,11 @@ def remover(lista):
     opcao_remover = int(input(menu_remover))
     
     if opcao_remover == 1:
-        lista = remover_inicio(lista)
+        remover_inicio(lista)
     elif opcao_remover == 2:
-        lista = remover_final(lista)
+        remover_final(lista)
     elif opcao_remover == 3:
-        lista = remover_posicao(lista)
+        remover_posicao(lista)
     elif opcao_remover == 4:
         remover_todos(lista)
     else:
@@ -160,8 +155,6 @@ def remover_inicio(lista):
     
     for _ in range(qtd):
         lista.pop(0)
-    
-    return lista
 
 
 def remover_final(lista):
@@ -169,8 +162,6 @@ def remover_final(lista):
     
     for _ in range(qtd):
         lista.pop(len(lista) - 1)
-    
-    return lista
 
 
 def remover_posicao(lista):
@@ -179,14 +170,10 @@ def remover_posicao(lista):
     for _ in range(qtd):
         pos = int(input('Qual posição a remover?\n> '))
         lista.pop(pos)
-    
-    return lista
 
 
 def remover_todos(lista):
     lista = []
-    
-    return lista
 
 
 def contar(lista):
@@ -348,25 +335,25 @@ def operacoes(lista):
     opcao_op = int(input(menu_op))
     
     if opcao_op == 1:
-        lista = multiplicar_positivos(lista)
+        multiplicar_positivos(lista)
     if opcao_op == 2:
-        lista = dividir_positivos(lista)
+        dividir_positivos(lista)
     if opcao_op == 3:
-        lista = multiplicar_negativos(lista)
+        multiplicar_negativos(lista)
     if opcao_op == 4:
-        lista = dividir_negativos(lista)
+        dividir_negativos(lista)
     if opcao_op == 5:
-        lista = multiplicar_pares(lista)
+        multiplicar_pares(lista)
     if opcao_op == 6:
-        lista = multiplicar_impares(lista)
+        multiplicar_impares(lista)
     if opcao_op == 7:
-        lista = multiplicar_todos(lista)
+        multiplicar_todos(lista)
     if opcao_op == 8:
-        lista = dividir_pares(lista)
+        dividir_pares(lista)
     if opcao_op == 9:
-        lista = dividir_impares(lista)
+        dividir_impares(lista)
     if opcao_op == 10:
-        lista = dividir_todos(lista)
+        dividir_todos(lista)
     else:
         print('\nOpção Inválida!')
         
@@ -387,7 +374,7 @@ def multiplicar_positivos(lista):
         else:
             nova_lista.append(num)
     
-    return nova_lista
+    lista = nova_lista
 
 
 def dividir_positivos(lista):
@@ -400,7 +387,7 @@ def dividir_positivos(lista):
         else:
             nova_lista.append(num)
     
-    return nova_lista
+    lista = nova_lista
 
 
 def multiplicar_negativos(lista):
@@ -413,7 +400,7 @@ def multiplicar_negativos(lista):
         else:
             nova_lista.append(num * operador)
     
-    return nova_lista
+    lista = nova_lista
 
 
 def dividir_negativos(lista):
@@ -426,7 +413,7 @@ def dividir_negativos(lista):
         else:
             nova_lista.append(num / operador)
     
-    return nova_lista
+    lista = nova_lista
 
 
 def multiplicar_pares(lista):
@@ -439,7 +426,7 @@ def multiplicar_pares(lista):
         else:
             nova_lista.append(num)
     
-    return nova_lista
+    lista = nova_lista
 
 
 def multiplicar_impares(lista):
@@ -452,14 +439,12 @@ def multiplicar_impares(lista):
         else:
             nova_lista.append(num * operador)
     
-    return nova_lista
+    lista = nova_lista
 
 
 def multiplicar_todos(lista):
     operador = int(input('Qual o fator da multiplicação?\n> '))
     lista * operador
-    
-    return lista
 
 
 def dividir_pares(lista):
@@ -472,7 +457,7 @@ def dividir_pares(lista):
         else:
             nova_lista.append(num)
     
-    return nova_lista
+    lista = nova_lista
 
 
 def dividir_impares(lista):
@@ -485,14 +470,12 @@ def dividir_impares(lista):
         else:
             nova_lista.append(num / operador)
     
-    return nova_lista
+    lista = nova_lista
 
 
 def dividir_todos(lista):
     operador = int(input('Qual o fator da divisão?\n> '))
     lista / operador
-    
-    return lista
 
 
 def continuar():
