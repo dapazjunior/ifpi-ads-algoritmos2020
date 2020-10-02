@@ -67,7 +67,7 @@ def inserir_inicio(lista):
     lista_add = []
     
     for i in range(qtd):
-        valor = int(input(f'Elemento "{i}": '))
+        valor = int(input(f'Elemento [{i}]: '))
         lista_add.append(valor)
     
     lista = lista_add + lista
@@ -87,7 +87,7 @@ def inserir_posicao(lista):
     
     for _ in range(qtd):
         pos = int(input('\nPosição a ser inserido: '))
-        valor = int(input(f'Elemento "{pos}": '))
+        valor = int(input(f'Elemento [{pos}]: '))
         lista.insert(pos, valor)
 
 
@@ -119,7 +119,7 @@ def mostrar_todos(lista):
 
 def mostrar_posicao(lista):
     pos = int(input('Digite a posição: '))
-    print(f'Elemento "{pos}": {lista[pos]}')
+    print(f'Elemento [{pos}]: {lista[pos]}')
 
 
 def remover(lista):
