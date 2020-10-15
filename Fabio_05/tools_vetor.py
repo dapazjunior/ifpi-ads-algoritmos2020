@@ -70,3 +70,21 @@ def eh_quadrada(matriz):
             verifica = False
     
     return verifica
+
+
+def somar_linha_matriz(matriz, num_linha):
+    soma = 0
+    
+    for num in matriz[num_linha]:
+        soma += num
+    
+    return soma
+
+
+def somar_coluna_matriz(matriz, num_coluna):
+    soma = 0
+    
+    for linha in matriz:
+        soma += linha[num_coluna]
+    
+    return soma
