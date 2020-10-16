@@ -15,21 +15,21 @@ def main():
 
 def soma_esquerda(matriz):
     soma = 0
-    qtd_linha = 1
+    limite_linha = 1
 
     for linha in matriz[1:6]:
-        for num in linha[0:qtd_linha]:
+        for num in linha[0:limite_linha]:
             soma += num
         
-        qtd_linha += 1
+        limite_linha += 1
     
-    qtd_linha -= 1
+    limite_linha -= 1
     
     for linha in matriz[6:12]:
-        for num in linha[0:qtd_linha]:
+        for num in linha[0:limite_linha]:
             soma += num
         
-        qtd_linha -= 1
+        limite_linha -= 1
     
     return soma
 
@@ -39,7 +39,7 @@ def media_esquerda(matriz):
     cont = 0
     
     for linha in matriz:
-        for _ in linha[limite_linha:12]:
+        for _ in linha[limite_linha:len(matriz)]:
             cont += 1
         
         limite_linha += 1
