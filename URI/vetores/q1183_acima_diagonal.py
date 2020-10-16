@@ -5,46 +5,38 @@ def main():
     matriz = criar_matriz(12,12)
 
     if operacao == 'S':
-        soma = soma_esquerda(matriz)
+        soma = soma_acima_diagonal(matriz)
         print(f'A soma é {soma}')
     
     else:
-        media = media_esquerda(matriz)
+        media = media_acima_diagonal(matriz)
         print(f'A média é {media}')
 
 
-def soma_esquerda(matriz):
+def soma_acima_diagonal(matriz):
     soma = 0
-    qtd_linha = 1
+    limite_linha = 1
 
-    for linha in matriz[1:6]:
-        for num in linha[0:qtd_linha]:
+    for linha in matriz:
+        for num in linha[limite_linha:len(matriz)]:
             soma += num
         
-        qtd_linha += 1
-    
-    qtd_linha -= 1
-    
-    for linha in matriz[6:12]:
-        for num in linha[0:qtd_linha]:
-            soma += num
-        
-        qtd_linha -= 1
+        limite_linha += 1
     
     return soma
 
 
-def media_esquerda(matriz):
+def media_acima_diagonal(matriz):
     limite_linha = 1
     cont = 0
     
     for linha in matriz:
-        for _ in linha[limite_linha:12]:
+        for _ in linha[limite_linha:len(matriz)]:
             cont += 1
         
         limite_linha += 1
 
-    soma = soma_esquerda(matriz)
+    soma = soma_acima_diagonal(matriz)
     media = soma / cont
 
     return media
