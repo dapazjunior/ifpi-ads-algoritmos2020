@@ -11,14 +11,11 @@ def main():
 
     while opcao != 0:
         if opcao == 1:
-            print('Criando novo celular')
+            # criar celular
             celular = novo_celular()
 
             # salvar celular
             celulares.append(celular)
-
-            input('\n<enter> to continue...')
-            opcao = int(input(menu))
 
         elif opcao == 2:
             mostrar_celulares(celulares)
@@ -41,11 +38,13 @@ def tela_principal():
 
 
 def novo_celular():
+    print('Adicionando novo celular')
+
     # obter dados
     nome = input('Nome: ')
     marca = input('Marca: ')
     tela = input('Tela("): ')
-    valor = input('Valor (R$): ')
+    valor = float(input('Valor (R$): '))
     cam_frontal = input('Camera frontal(sim/não): ')
 
     celular = {}
@@ -65,7 +64,9 @@ def mostrar_celulares(celulares):
     for celular in celulares:
         print('Nome: ', celular['nome'])
         print('Marca: ', celular['marca'])
-        print('Valor', celular['valor'])
+        print('Tela: ', celular['tela'])
+        print('Valor: ', celular['valor'])
+        print('Possui câmera frontal: ', celular['cam_frontal'])
         print(12 * '---')
 
 
